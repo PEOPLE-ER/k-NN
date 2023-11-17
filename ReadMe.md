@@ -9,7 +9,7 @@ and climate variability.
 
 ## k-NN Tool Objective
 
-The objective of the PEOPLE-ER k-NN tool is to provide a generic tool to conduct k Nearest Neighbour (k-NN) prediction of continuous forest target variables of interest. In the context of Ecosystem Restoration (ER) monitoring, the tool allows wall-to-wall propagation of the variables of interest using field reference data and provided EO datasets. 
+The objective of the PEOPLE-ER k-NN tool is to provide a generic tool to conduct k Nearest Neighbour (k-NN) prediction of continuous forest target variables of interest. In the context of Ecosystem Restoration (ER) monitoring, the tool allows wall-to-wall propagation of the variables of interest using field reference data and provided EO datasets.
 
 Together with the [PEOPLE-ER Spectral Recovery Tool](https://people-er.github.io/Spectral-Recovery/), it provides users with the possibility to approximate the ecosystems’ status (e.g., in the form of forest structural variable development) at any given time during the recovery process. It allows users to use any available combination of EO and auxiliary layers, together with their own or external field reference data. The field reference data can be in the form of field plot measurements or forest compartment (stand) level data.
 
@@ -32,21 +32,21 @@ The area used for the demonstration of this tool is in Northern Finland. A Senti
 This tutorial was developed within the Pioneer Earth Observation apPlications for the Environment Ecosystem
 Restoration (PEOPLE-ER) project financed by the European Space Agency (ESA). Members of the PEOPLE-ER consortium include:
 
-![image](asset/ESA_logo_2020_Deep_25per.png){align=center}
+![image](asset/ESA_logo_2020_Deep_25per.png)
 
-![image](asset/Hatfield_Logo_Hor_Blue_RGB_rescaled.png){align=center}
+![image](asset/Hatfield_Logo_Hor_Blue_RGB_rescaled.png)
 
-![image](asset/ubc-logo-2018-fullsig-blue-rgb300_rescaled3.png){align=center}
+![image](asset/ubc-logo-2018-fullsig-blue-rgb300_rescaled3.png)
 
-![image](asset/VTT_Orange_Logo_150per.png){align=center}
+![image](asset/VTT_Orange_Logo_150per.png)
 
-![image](asset/INCDS_logo_150per.jpg){align=center}
+![image](asset/INCDS_logo_150per.jpg)
 
 ## How to Cite
 
-When using this tool in your work we ask that you please cite the Spectral_Recovery tool as follows:
+When using this tool in your work we ask that you please cite the k-NN tool as follows:
 
-"The Wetland Function Assessment Tutorial was developed in the PEOPLE-ER Project, managed by Hatfield Consultants, and financed by the European Space Agency."
+"The PEOPLE-ER k-NN Tool was developed by VTT in the PEOPLE-ER Project, managed by Hatfield Consultants, and financed by the European Space Agency."
 
 ## License
 
