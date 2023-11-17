@@ -1,6 +1,6 @@
 # Welcome to the PEOPLE-ER k-Nearest Neighbours (k-NN) tool!
 
-![image](asset/pEOple_KV-Ecosystem_Restorarion.jpg){align=center}
+![image](asset/pEOple_KV-Ecosystem_Restorarion.jpg)
 
 ## Problem Statement
 
