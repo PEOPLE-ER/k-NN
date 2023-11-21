@@ -43,7 +43,7 @@ Restoration (PEOPLE-ER) project financed by the European Space Agency (ESA). Mem
 
 ## How to Cite
 
-When using this tool in your work we ask that you please cite the Spectral_Recovery tool as follows:
+When using this tool in your work we ask that you please cite the k-NN tool as follows:
 
 "The k-NN Tool was developed by VTT as part of the PEOPLE-ER Project, managed by Hatfield Consultants, and financed by the European Space Agency."
 
