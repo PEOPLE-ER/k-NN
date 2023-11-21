@@ -18,7 +18,7 @@ This user guide provides an overview of the k-Nearest Neighbours (k-NN) tool. Th
 
 ## 1.1 INTRODUCTION
 
-There is a long tradition of forest structural variable (e.g. height, diameter, basal area and volume) prediction combining field reference data and EO datasets. Satellite based methods for prediction of forest structural variables in 10-30 m resolution have been developed since the 1990’s with multispectral images  (Tomppo 1991; Tokola et al. 1996; Häme et al. 2013), and are still in operational use together with new data sources like LiDAR and polarimetric and interferometric SAR data (Antropov et al., 2016, Kangas et al. 2018, Tomppo et al., 2019). The k-Nearest Neighbor method (k-NN Alt, 2001), has been widely used for forest monitoring, particularly in the boreal zone (Tomppo 1991, Tokola et al. 1996, Tomppo 2008) and is operationally used for the Finnish National Forest Inventory (Mäkisara et al. 2022). One of the key benefits of the k-NN method is the capability for simultaneous prediction of all variables of interest. This helps retain relationships between variables (e.g. height and volume) at any given point, better than any other method that predicts one variable at a time.
+There is a long tradition of forest structural variable (e.g. height, diameter, basal area and volume) prediction combining field reference data and EO datasets. Satellite based methods for prediction of forest structural variables in 10-30 m resolution have been developed since the 1990’s with multispectral images  (Tomppo 1991; Tokola et al. 1996; Häme et al. 2013), and are still in operational use together with new data sources like LiDAR and polarimetric and interferometric SAR data (Antropov et al., 2016, Kangas et al. 2018, Tomppo et al., 2019). The k-Nearest Neighbor method (k-NN Alt, 2001), has been widely used for forest monitoring, particularly in the boreal zone (Tomppo 1991, Tokola et al. 1996, Tomppo 2008) and is operationally used for the Finnish National Forest Inventory (Mäkisara et al. 2022). One of the key benefits of the k-NN method is the capability for simultaneous prediction of all variables of interest. This helps retain relationships between variables (e.g. height and volume) at any given point, better than methods that predict one variable at a time.
 
 ## 1.2 DESCRIPTION OF THE METHOD
 
@@ -36,7 +36,7 @@ The Euclidean distance is calculated as:
 
 where $x_i$ is the target pixel feature $i$ and $y$ is the corresponding value for an observatio in the training feature bank. The number of nearest observations used in the prediction typically vaires from three to over 15, depending on the number and characteristics of the available field reference data.
 
-In addition to the output map layer (i.e. the target variable predictions), general uncertainty metrics are calculated from the feature banks, the user has an option to divide the feature bank to training and testing feature banks. Thetraining feature bank is used to predict values for the observations in the testing feature bank. The predictions are then compared to the observations to calculate the Root Mean Square Error (RMSE) and bias of the predictions as:
+In addition to the output map layer (i.e. the target variable predictions), general uncertainty metrics are calculated from the feature banks, the user has an option to divide the feature bank to training and testing feature banks. The training feature bank is used to predict values for the observations in the testing feature bank. The predictions are then compared to the observations to calculate the Root Mean Square Error (RMSE) and bias of the predictions as:
 
 ![image](asset/formula_rmse.png) ![image](asset/formula_bias.png)
 
@@ -66,7 +66,7 @@ The required inputs can be divided into two categories.
    1. EO (and any auxiliary feature as desired) layers from the time of the reference data collection.
    2. Representative reference data from the area of interest.
 2. Inputs required for the k-NN based map creation:
-   1. Selected EO and auxiliary festure layers for the desired date.
+   1. Selected EO and auxiliary feature layers for the desired date.
    2. Training feature bank .csv file including the target and EO/auxiliary variables (see Figure 2).
    3. (Optional) Testing feature bank .csv file.
    4. Selection of the number of neighbours (k) to be used.
@@ -88,17 +88,17 @@ These example datasets allow for testing of forest variable predictions in North
 
 1. G = Basal area $(m^2/ha)$
 2. V = Stem volume $(m^3/ha)$
-3. D = diameter $(cm)$
+3. D = Diameter $(cm)$
 4. H = Height $(m)$
-5. PINE = proportion of Scott's pine (*Pinus sylvestris*) of basal area (%)
-6. SPRUCE = proportion of Norway spruce (*Picea abies*) of basal area (%)
-7. BL = proportion of broadleaf trees of basal area (%)
+5. PINE = Proportion of Scott's pine (*Pinus sylvestris*) of basal area (%)
+6. SPRUCE = Proportion of Norway spruce (*Picea abies*) of basal area (%)
+7. BL = Proportion of broadleaf trees of basal area (%)
 
 The sample plots were ordered by volume and every third plot was selected for the testing feature bank (280 plot), while the rest of the plots were usind in the training feature bank (560 plots).
 
 ## 2.5 PROCESS AND OUTPUTS
 
-The k-NN tool has been implemented on the [Forestry TEP online platform](https://f-tep.com/)to allow easy exploitation of Earth observation (EO) datasets. t can also be run using the python code provided in this repository. See the ‘Getting started with k-NN’ for technical instructions on how to run the tool in your computer.
+The k-NN tool has been implemented on the [Forestry TEP online platform](https://f-tep.com/)to allow easy exploitation of Earth observation (EO) datasets. It can also be run using the python code provided in this repository. See the ‘Getting started with k-NN’ for technical instructions on how to run the tool in your computer.
 
 In the simplest form, the tool can be run with an EO image and a training feature bank. However, in an optimal case, part (e.g. 1/3) of the feature bank is extracted to a testing feature bank, while the remainder (e.g. 2/3) of the reference observations are used as training feature bank for the target variable prediction. To ensure similar distribution of the training and testing feature banks, it is recommended that the original full feature bank is ordered by one of the target variables before extracting every third sample for the testing feature bank.
 
@@ -108,7 +108,7 @@ The resulting outputs include the map layer (predictions) and uncertainty metric
 
 ## 2.6 TOOL CONSIDERATIONS AND LIMITATIONS
 
-The tool requires that a user have pre-existing domain knowledge of the restoration sites and other areas they wish to create the target variable map over. Specifically, users must have: 
+The tool requires that a user have pre-existing domain knowledge of the restoration sites and other areas they wish to create the target variable map over. Specifically, users must have:
 
 1. Knowledge and spatial delineation of restoration sites.
 
@@ -116,7 +116,7 @@ The tool requires that a user have pre-existing domain knowledge of the restorat
 
 3. Representative field reference data collected on a year that also has available EO data.
 
-The representativeness of the field data is essential. It should cover the entire range of target variable values and include typically at least 100 observations. Without a representative field reference data, the tool will not produce reliable results. Typically, there presentative reference data needs to be provided by the user. In some cases, suitable open field reference datasets may be available from the area of interest.
+The representativeness of the field data is essential. It should cover the entire range of target variable values and include typically at least 100 observations. Without a representative field reference data, the tool will not produce reliable results. Typically, the representative reference data needs to be provided by the user. In some cases, suitable open field reference datasets may be available from the area of interest.
 
 The tool does not provide pre-processing of the reference, EO or auxiliary datasets. The user needs to create the feature bank .csv file and a corresponding stack of the EO and auxiliary layers.
 

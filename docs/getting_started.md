@@ -53,7 +53,7 @@ Default *knnsettings.csv* file is prefilled with sample values, with the paramet
 To run the k-NN tool follow these steps:
 
 1. Prepare or decide on processing parameters and save them in knnsettings.csv or be ready to type them in answering to queries.
-2. Prepare EO banks for training and testing (accuracy assessment). If no testing data are available, training data filename can be used instead.
+2. Prepare feature banks for training and testing (accuracy assessment). If no testing data are available, training data filename can be used instead.
 3. Prepare EO image stack and make sure EO image layers correspond to EO feature list stored in knnsettings.csv.
 4. Run peopleER_kNN.py as needed.
 

@@ -4,8 +4,7 @@
 
 ## Problem Statement
 
-The provision of a generic k-NN tool as part of the PEOPLE-ER toolbox allows users to derive additional information on the status of the ecosystem with a variety of datasets. The tool is not limited to any specific type of reference or remotely sensed data, but can be used with the datasets available for the area of interest. The PEOPLE-ER k-NN tool should be seen as a supporting tool for the main ecosystem recovery monitoring tools developed in the project. This tool can be used to provide further information within and around the restoration areas, benefiting from the field reference data the users have collected. 
-and climate variability.
+The provision of a generic k-NN tool as part of the PEOPLE-ER toolbox allows users to derive additional information on the status of the ecosystem with a variety of datasets. The tool is not limited to any specific type of reference or remotely sensed data, but can be used with the datasets available for the area of interest. The PEOPLE-ER k-NN tool should be seen as a supporting tool for the main ecosystem recovery monitoring tools developed in the project. This tool can be used to provide further information within and around the restoration areas, benefiting from the field reference data the users have collected.
 
 ## k-NN Tool Objective
 
@@ -25,7 +24,7 @@ This documentation contains:
 
 ## Demonstration Area
 
-The area used for the demonstration of this tool is in Northern Finland. A Sentinel-2 scene is provided in order to test the tool (tile ID 35WMP).
+The area used for the demonstration of this tool is in Northern Finland. A subset of a Sentinel-2 scene is provided in order to test the tool (tile ID 35WMP).
 
 ## Acknowledgements
 
@@ -46,7 +45,7 @@ Restoration (PEOPLE-ER) project financed by the European Space Agency (ESA). Mem
 
 When using this tool in your work we ask that you please cite the Spectral_Recovery tool as follows:
 
-"The Wetland Function Assessment Tutorial was developed in the PEOPLE-ER Project, managed by Hatfield Consultants, and financed by the European Space Agency."
+"The k-NN Tool was developed by VTT as part of the PEOPLE-ER Project, managed by Hatfield Consultants, and financed by the European Space Agency."
 
 ## License
 
