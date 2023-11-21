@@ -14,10 +14,15 @@ Together with the [PEOPLE-ER Spectral Recovery Tool](https://people-er.github.io
 
 ## Table of Contents
 
-This documentation contains:
+This repository contains:
 
-- 1) About k-NN; a technical description of the k-NN tool.
-- 2) Getting Started; a guide on how to get started using the k-NN tool using python.
+- 1) docs; the documentation files for the k-NN tool.
+- 2) data; the data one can use to test the k-NN tool.
+- 3) asset; imagery used in this repository and in the documentation.
+- 4) CODE_OF_CONDUCT.md; the code of conduct for this repositories community.
+- 5) LICENSE.md; the License that this repository and it's contents fall under.
+- 6) ReadMe.md; the landing page you are reading now!
+- 7) mkdocs.yml; the mkdocs configuration file.
 
 ## Workflow Diagram
 ![Alt text](asset/workflow.png "Graph of Workflow")
