@@ -24,7 +24,7 @@ This documentation contains:
 
 ## Demonstration Area
 
-The area used for the demonstration of this tool is in Northern Finland. A Sentinel-2 scene is provided in order to test the tool (tile ID 35WMP).
+The area used for the demonstration of this tool is in Northern Finland. A subset of a Sentinel-2 scene is provided in order to test the tool (tile ID 35WMP).
 
 ## Acknowledgements
 
