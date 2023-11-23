@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://www.people-er.github.io/k-NN/getting_started/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Getting Started - PEOPLE-ER k-Nearest Neighbors</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/docco.min.css">
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">PEOPLE-ER k-Nearest Neighbors</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Documentation <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../about/" class="dropdown-item">Technical Documentation</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Getting Started</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href="../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started-with-people-er-k-nn" class="nav-link">Getting Started with PEOPLE-ER k-NN</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1-installation" class="nav-link">1. Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-input-parameters" class="nav-link">2. Input Parameters</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#3-running-the-tool" class="nav-link">3. Running the Tool</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started-with-people-er-k-nn">Getting Started with PEOPLE-ER k-NN</h1>
+<p>This document will serve as a guide on how to start using the PEOPLE-ER k-NN python tool. It will go over the installation and required inputs of the tool.</p>
+<h2 id="1-installation">1. Installation</h2>
+<p>The k-NN tool is provided as a Python script that can be edited as necessary or run with text example settings. The script is provided with several auxiliary files, as a downloadable zip-file named <em>'PEOPLE-ER_kNN_tool.zip'</em>. The downloadable zip-file can be found in the tool's <a href="https://github.com/PEOPLE-ER">GitHub repository</a> under the data folder.</p>
+<p>After unpacking the zip-file to a suitable local directory, the script can be run using python after installing the required packages in the processing environment. An environment file, listing necessary Python packages is provided in the zip file.</p>
+<p>The contents of the tool is thus represented by the following files:</p>
+<ol>
+<li>
+<p><strong>peopleER_kNN.py</strong> – main python file with kNNRegression class, training and prediction script. </p>
+</li>
+<li>
+<p><strong>knnsettings.csv</strong> – parameters file, prefilled for demo-example; this is the place where parameters can be stored to avoid keyboard input. </p>
+</li>
+<li>
+<p><strong>knnenv.yml</strong> – environment file listing necessary python packages. This file is to be used when e.g., creating a virtual environment in conda.  </p>
+</li>
+<li>
+<p><strong>S2A_example.tif</strong> – a sample file containing several Sentinel-2 image bands over sample area of interest in Finland. </p>
+</li>
+<li>
+<p><strong>PEOPLE-ER_example_FIN_2016-Training.csv</strong> – a sample EO feature bank that can be used for training/defining kNN model, contains values of forest plots measurements and values of various EO image features calculated for these plots.  </p>
+</li>
+<li>
+<p><strong>PEOPLE-ER_example_FIN_2016-Testing.csv</strong> - a sample EO feature bank that can be used for accuracy assessment (testing) of kNN model.</p>
+</li>
+</ol>
+<h2 id="2-input-parameters">2. Input Parameters</h2>
+<p>To begin using the tool, you need to set up a python environment using information form knnenv.yml file using for example the <code>conda env create -f knnenv.yml</code> command.</p>
+<p>Further, an input EO image stack at the extent of your area of interest (AOI) for which the forest mapping will be done, and the corresponding feature bank(s), should be prepared before k-NN prediction of forest variables. Feature bank can contain excessive information if needed, for example EO features that are not present in the model or EO dataset. However, when running the tool, it’s important to make sure that the amount and order of input EO features listed in the parameters (manually input or read from knnsettings.csv) corresponds to that in input EO image.  </p>
+<p>Please see the ”About the tool” page for information on how to prepare the feature banks.  </p>
+<p>It is with the prepared input EO image dataset and feature bank(s) that the tool can be run.</p>
+<p>The following briefly describes the input parameters required:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trainfname</td>
+<td>Name of EO feature bank used in model training/definition, contains data on both EO features and forest variable values for a sample of training forest plots measurements</td>
+</tr>
+<tr>
+<td>testfname</td>
+<td>Name of EO feature bank used in model accuracy assessment (when absent, the accuracy can be calculated on the training dataset, even though this is generally discouraged practice)</td>
+</tr>
+<tr>
+<td>neighbors</td>
+<td>Number of neighbors in the kNN regression model</td>
+</tr>
+<tr>
+<td>EO_features</td>
+<td>List of EO features used in kNN modeling, represents a subset of features present in the EO bank</td>
+</tr>
+<tr>
+<td>target_features</td>
+<td>List of forest variables for which prediction is performed using the kNN model defined earlier, also represents a subset of features present in the EO bank</td>
+</tr>
+<tr>
+<td>inputEOimage_name</td>
+<td>Name of input EO image tiff-file, a stack of EO feature layers that corresponds to list of EO features defined above</td>
+</tr>
+<tr>
+<td>output_image_name</td>
+<td>Name of tiff-file where produced forest variable maps will be stored in the order specified in target features list</td>
+</tr>
+</tbody>
+</table>
+<p>Default <em>knnsettings.csv</em> file is prefilled with sample values, with the parameter name and parameter value separated by comma, each parameter starting from a new line:  </p>
+<p><img alt="image" src="../asset/knnsetting_example.png" /></p>
+<h1 id="3-running-the-tool">3. Running the Tool</h1>
+<p>To run the k-NN tool follow these steps:</p>
+<ol>
+<li>Prepare or decide on processing parameters and save them in knnsettings.csv or be ready to type them in answering to queries.</li>
+<li>Prepare feature banks for training and testing (accuracy assessment). If no testing data are available, training data filename can be used instead.</li>
+<li>Prepare EO image stack and make sure EO image layers correspond to EO feature list stored in knnsettings.csv.</li>
+<li>Run peopleER_kNN.py as needed.</li>
+</ol>
+<p>The output tiff-file will contain the produced map for the chosen forest variables specified in the target_features parameter.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
