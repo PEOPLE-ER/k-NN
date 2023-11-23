@@ -17,6 +17,7 @@ plugins:
             docstring_style: numpy
 
 markdown_extensions:
+  - mdx_truly_sane_lists
   - attr_list
   - pymdownx.arithmatex:
       generic: true
