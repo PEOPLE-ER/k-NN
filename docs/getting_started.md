@@ -4,7 +4,7 @@ This document will serve as a guide on how to start using the PEOPLE-ER k-NN pyt
 
 ## 1. Installation
 
-The k-NN tool is provided as a Python script that can be edited as necessary or run with text example settings. The script is provided with several auxiliary files, as a downloadable zip-file named *'PEOPLE-ER_kNN_tool.zip'*.
+The k-NN tool is provided as a Python script that can be edited as necessary or run with text example settings. The script is provided with several auxiliary files, as a downloadable zip-file named *'PEOPLE-ER_kNN_tool.zip'*. The downloadable zip-file can be found in the tool's [GitHub repository](https://github.com/PEOPLE-ER) under the data folder.
 
 After unpacking the zip-file to a suitable local directory, the script can be run using python after installing the required packages in the processing environment. An environment file, listing necessary Python packages is provided in the zip file.
 

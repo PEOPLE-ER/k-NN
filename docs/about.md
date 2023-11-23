@@ -62,10 +62,10 @@ The tool operates using the following approach:
 
 The required inputs can be divided into two categories.
 
-1. Inputs required for the feature bank creation, which include:
+* Inputs required for the feature bank creation, which include:
    1. EO (and any auxiliary feature as desired) layers from the time of the reference data collection.
    2. Representative reference data from the area of interest.
-2. Inputs required for the k-NN based map creation:
+* Inputs required for the k-NN based map creation:
    1. Selected EO and auxiliary feature layers for the desired date.
    2. Training feature bank .csv file including the target and EO/auxiliary variables (see Figure 2).
    3. (Optional) Testing feature bank .csv file.

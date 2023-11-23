@@ -8,7 +8,7 @@ The provision of a generic k-NN tool as part of the PEOPLE-ER toolbox allows use
 
 ## k-NN Tool Objective
 
-The objective of the PEOPLE-ER k-NN tool is to provide a generic tool to conduct k Nearest Neighbour (k-NN) prediction of continuous forest target variables of interest. In the context of Ecosystem Restoration (ER) monitoring, the tool allows wall-to-wall propagation of the variables of interest using field reference data and provided EO datasets. 
+The objective of the PEOPLE-ER k-NN tool is to provide a generic tool to conduct k-Nearest Neighbour (k-NN) prediction of continuous forest target variables of interest. In the context of Ecosystem Restoration (ER) monitoring, the tool allows wall-to-wall propagation of the variables of interest using field reference data and provided EO datasets.
 
 Together with the [PEOPLE-ER Spectral Recovery Tool](https://people-er.github.io/Spectral-Recovery/), it provides users with the possibility to approximate the ecosystems’ status (e.g., in the form of forest structural variable development) at any given time during the recovery process. It allows users to use any available combination of EO and auxiliary layers, together with their own or external field reference data. The field reference data can be in the form of field plot measurements or forest compartment (stand) level data.
 
