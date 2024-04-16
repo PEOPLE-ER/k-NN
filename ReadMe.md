@@ -2,6 +2,13 @@
 
 ![image](asset/pEOple_KV-Ecosystem_Restorarion.jpg)
 
+---
+Github: [https://github.com/PEOPLE-ER/k-NN](https://github.com/PEOPLE-ER/k-NN)
+
+Documentation: [https://people-er.github.io/k-NN/](https://people-er.github.io/k-NN/)
+
+---
+
 ## Problem Statement
 
 The provision of a generic k-NN tool as part of the PEOPLE-ER toolbox allows users to derive additional information on the status of the ecosystem with a variety of datasets. The tool is not limited to any specific type of reference or remotely sensed data, but can be used with the datasets available for the area of interest. The PEOPLE-ER k-NN tool should be seen as a supporting tool for the main ecosystem recovery monitoring tools developed in the project. This tool can be used to provide further information within and around the restoration areas, benefiting from the field reference data the users have collected.
