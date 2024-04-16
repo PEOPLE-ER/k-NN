@@ -1,0 +1,572 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.people-er.github.io/k-NN/about/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../getting_started/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+    
+    
+      
+        <title>Technical Documentation - PEOPLE-ER k-Nearest Neighbors</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-scientific-basis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PEOPLE-ER k-Nearest Neighbors" class="md-header__button md-logo" aria-label="PEOPLE-ER k-Nearest Neighbors" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PEOPLE-ER k-Nearest Neighbors
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Technical Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PEOPLE-ER/k-NN" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PEOPLE-ER k-Nearest Neighbors" class="md-nav__button md-logo" aria-label="PEOPLE-ER k-Nearest Neighbors" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PEOPLE-ER k-Nearest Neighbors
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PEOPLE-ER/k-NN" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Technical Documentation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Technical Documentation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 INTRODUCTION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-description-of-the-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 DESCRIPTION OF THE METHOD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 INTRODUCTION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-description-of-the-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 DESCRIPTION OF THE METHOD
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p><strong>Authors:</strong></p>
+<p>Oleg Antropov,
+Lauri Seitsonen,
+Jukka Miettinen</p>
+<p><strong>Reviewed/Edited by:</strong></p>
+<p>Marcos Kavlin</p>
+<p>This user guide provides an overview of the k-Nearest Neighbours (k-NN) tool. This overview includes the following sections:</p>
+<ol>
+<li>Scientific Basis</li>
+<li>Description of the Tool</li>
+<li>References</li>
+</ol>
+<h1 id="1-scientific-basis">1. SCIENTIFIC BASIS</h1>
+<h2 id="11-introduction">1.1 INTRODUCTION</h2>
+<p>There is a long tradition of forest structural variable (e.g. height, diameter, basal area and volume) prediction combining field reference data and EO datasets. Satellite based methods for prediction of forest structural variables in 10-30 m resolution have been developed since the 1990’s with multispectral images  (Tomppo 1991; Tokola et al. 1996; Häme et al. 2013), and are still in operational use together with new data sources like LiDAR and polarimetric and interferometric SAR data (Antropov et al., 2016, Kangas et al. 2018, Tomppo et al., 2019). The k-Nearest Neighbor method (k-NN Alt, 2001), has been widely used for forest monitoring, particularly in the boreal zone (Tomppo 1991, Tokola et al. 1996, Tomppo 2008) and is operationally used for the Finnish National Forest Inventory (Mäkisara et al. 2022). One of the key benefits of the k-NN method is the capability for simultaneous prediction of all variables of interest. This helps retain relationships between variables (e.g. height and volume) at any given point, better than methods that predict one variable at a time.</p>
+<h2 id="12-description-of-the-method">1.2 DESCRIPTION OF THE METHOD</h2>
+<p>The tool is an implementation of a generic non-parametric and distribution-free k-Nearest Neighbour method (k-NN) (Alt, 2001). The predictions for the target variable values are obtained as linear combinations of target variable values in a set of observations selected from a reference feature bank. The reference feature bank should contain combinations of reference target variable values with the corresponding EO and auxiliary data features. The observations are selected by Euclidean distance on the EO and auxiliary variable space. The reference observations with the smallest distances to the target pixel in the EO and auxiliary space are selected. Simultaneous prediction of all variables of interest can be conducted. The k-NN is a non-parametric estimator since predictions can be made without any parameters, as well as distribution-free prediction method because predictions can be made without any prior distributional assumptions.</p>
+<p>The k-NN predicted target variable value <span class="arithmatex">\(Y_p\)</span> for pixel <span class="arithmatex">\(_p\)</span> is calculated as:</p>
+<p><img alt="image" src="../asset/formula_knn.png" /></p>
+<p>where <span class="arithmatex">\(y_i\)</span> is the target variable value of the <span class="arithmatex">\(i^{th}\)</span> contributing observation in the reference set, <span class="arithmatex">\(I\)</span> is the subset of nearest observations used for the prediction, and <span class="arithmatex">\(w_{i,p}\)</span> is the weight of the <span class="arithmatex">\(i^{th}\)</span> contributing observation. In the implementation described here, the observations are weighed inversely to the Euclidean distance.</p>
+<p>The Euclidean distance is calculated as:</p>
+<p><img alt="image" src="../asset/formula_euclidean_dist.png" /></p>
+<p>where <span class="arithmatex">\(x_i\)</span> is the target pixel feature <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(y\)</span> is the corresponding value for an observatio in the training feature bank. The number of nearest observations used in the prediction typically vaires from three to over 15, depending on the number and characteristics of the available field reference data.</p>
+<p>In addition to the output map layer (i.e. the target variable predictions), general uncertainty metrics are calculated from the feature banks, the user has an option to divide the feature bank to training and testing feature banks. The training feature bank is used to predict values for the observations in the testing feature bank. The predictions are then compared to the observations to calculate the Root Mean Square Error (RMSE) and bias of the predictions as:</p>
+<p><img alt="image" src="../asset/formula_rmse.png" /> <img alt="image" src="../asset/formula_bias.png" /></p>
+<p>where <span class="arithmatex">\(y\)</span> represents the observed reference values, <img alt="image" src="../asset/formula_y.png" /> represents the predicted values and n is the number of samples. Both RMSE and bias are provided in absolute terms and as % of the mean.</p>
+<h1 id="2-description-of-the-tool">2. DESCRIPTION OF THE TOOL</h1>
+<h2 id="21-tool-overview-and-purpose">2.1 TOOL OVERVIEW AND PURPOSE</h2>
+<p>The provision of a generic k-NN tool as part of the PEOPLE-ER toolbox allows users to derive additional information on the status of the ecosystem with a variety of datasets. The tool is not limited to any specific type of reference or remotely sensed data, but can be used with the datasets available for the area of interest. The PEOPLE-ER k-NN tool should be seen as a supporting tool for the main ecosystem recovery monitoring tools developed in the project. This tool can be used to provide further information within and around the restoration areas, benefiting from the field reference data the users have collected.</p>
+<h2 id="22-tool-workflow">2.2 TOOL WORKFLOW</h2>
+<p>The tool operates using the following approach:</p>
+<ol>
+<li>The tool requires as input any Earth Observation (EO) data (in .tif format) and a corresponding set of field reference data. The field reference dataset should include reference measurements of the target variables, and should temporally coincide with the EO data.</li>
+<li>With these datasets, a feature bank is created, combining the target variable values and corresponding EO band values. In an optimal case the feature bank is split into a training feature bank (used to create the maps) and testing feature bank (used to derive model accuracy metrics).</li>
+<li>With the feature banks, target variable maps can be run for any EO image from the same region. In addition, the tool provides model accuracy metrics calculated from the testing feature bank.</li>
+</ol>
+<p><img alt="Alt text" src="../asset/workflow.png" title="Figure 1. Conceptual workflow diagram." /></p>
+<h2 id="23-tool-inputs">2.3 TOOL INPUTS</h2>
+<p>The required inputs can be divided into two categories.</p>
+<ul>
+<li>Inputs required for the feature bank creation, which include:<ol>
+<li>EO (and any auxiliary feature as desired) layers from the time of the reference data collection.</li>
+<li>Representative reference data from the area of interest.</li>
+</ol>
+</li>
+<li>Inputs required for the k-NN based map creation:<ol>
+<li>Selected EO and auxiliary feature layers for the desired date.</li>
+<li>Training feature bank .csv file including the target and EO/auxiliary variables (see Figure 2).</li>
+<li>(Optional) Testing feature bank .csv file.</li>
+<li>Selection of the number of neighbours (k) to be used.</li>
+<li>All processing parameters can be stored in a "knnsettings.csv" file or input manually from the keyboard.</li>
+</ol>
+</li>
+</ul>
+<p><img alt="Alt text" src="../asset/example_csv.png" title="Figure 2. Example of a k-NN tool's input feature bank csv file." /></p>
+<p>The <strong>EO and auxiliary dataset</strong> needs to be in .tif format and it needs to contain the same layers in the same order as provided in the <strong>Feature bank</strong> .csv files. The .csv files can be created in any GIS software by extracting image band and auxiliary data values for the corresponding target variable values (at a pixel or polygon level depending on the field data's unit of analysis). In addition the comma separated target variable and EO feature values, the .csv file needs to include a header row providing the column names. <strong>EO features</strong> are used to search for the closest neighbours to be used in the prediction of the <strong>target feature</strong> values. The EO features and target variable features are listed in the knnsetting.csv file.</p>
+<h2 id="24-example-datasets">2.4 EXAMPLE DATASETS</h2>
+<p>Example <strong>EO dataset and feature banks</strong> have been provided with the python code of the tool:</p>
+<ol>
+<li>PEOPLE-ER_example_FIN_2016-Training.csv</li>
+<li>PEOPLE-ER_example_FIN_2016-Testing.csv</li>
+<li>S2A_example.tif (clipped from S2A_MSIL2A_20160824T100032_N0204_R122_T35WMP_20160824T100028 image)</li>
+</ol>
+<p>These example datasets allow for testing of forest variable predictions in Northern Finland. The EO dataset consists of seven bands (B2, B3,B4, B8, B5, B11 and B12) of the Level 2A Sentinel image captured on the 24 August 2016. The corresponding feature banks have been created using open access field sample measurements provided by the <a href="https://www.metsakeskus.fi/fi/avoin-metsa-ja-luontotieto/aineistot-paikkatieto-ohjelmille/paikkatietoaineistot">Finnish Forest Centre</a> (Kaukokartoituskoealat; CC BY 4.0). Sample plots measured in 2016 were used and plot wise aggregates of the following variables were calculated:</p>
+<ol>
+<li>G = Basal area <span class="arithmatex">\((m^2/ha)\)</span></li>
+<li>V = Stem volume <span class="arithmatex">\((m^3/ha)\)</span></li>
+<li>D = Diameter <span class="arithmatex">\((cm)\)</span></li>
+<li>H = Height <span class="arithmatex">\((m)\)</span></li>
+<li>PINE = Proportion of Scott's pine (<em>Pinus sylvestris</em>) of basal area (%)</li>
+<li>SPRUCE = Proportion of Norway spruce (<em>Picea abies</em>) of basal area (%)</li>
+<li>BL = Proportion of broadleaf trees of basal area (%)</li>
+</ol>
+<p>The sample plots were ordered by volume and every third plot was selected for the testing feature bank (280 plot), while the rest of the plots were usind in the training feature bank (560 plots).</p>
+<h2 id="25-process-and-outputs">2.5 PROCESS AND OUTPUTS</h2>
+<p>The k-NN tool has been implemented on the <a href="https://f-tep.com/">Forestry TEP online platform</a>to allow easy exploitation of Earth observation (EO) datasets. It can also be run using the python code provided in this repository. See the ‘Getting started with k-NN’ for technical instructions on how to run the tool in your computer.</p>
+<p>In the simplest form, the tool can be run with an EO image and a training feature bank. However, in an optimal case, part (e.g. 1/3) of the feature bank is extracted to a testing feature bank, while the remainder (e.g. 2/3) of the reference observations are used as training feature bank for the target variable prediction. To ensure similar distribution of the training and testing feature banks, it is recommended that the original full feature bank is ordered by one of the target variables before extracting every third sample for the testing feature bank.</p>
+<p>For required input parameters, see the ‘Getting started with k-NN’ -page.</p>
+<p>The resulting outputs include the map layer (predictions) and uncertainty metrics for a chosen target variables. The prediction map layer provides the predicted target variable values. The uncertainty metrics (see Section 1.2 above) have been calculated from the testing feature bank by using the training feature bank to predict values for the testing feature bank items and comparing the predictions to the reference values. Note that in the case of very small testing feature bank, the metrics may not be reliable.</p>
+<h2 id="26-tool-considerations-and-limitations">2.6 TOOL CONSIDERATIONS AND LIMITATIONS</h2>
+<p>The tool requires that a user have pre-existing domain knowledge of the restoration sites and other areas they wish to create the target variable map over. Specifically, users must have:</p>
+<ol>
+<li>
+<p>Knowledge and spatial delineation of restoration sites.</p>
+</li>
+<li>
+<p>Knowledge of the year of restoration intervention.</p>
+</li>
+<li>
+<p>Representative field reference data collected on a year that also has available EO data.</p>
+</li>
+</ol>
+<p>The representativeness of the field data is essential. It should cover the entire range of target variable values and include typically at least 100 observations. Without a representative field reference data, the tool will not produce reliable results. Typically, the representative reference data needs to be provided by the user. In some cases, suitable open field reference datasets may be available from the area of interest.</p>
+<p>The tool does not provide pre-processing of the reference, EO or auxiliary datasets. The user needs to create the feature bank .csv file and a corresponding stack of the EO and auxiliary layers.</p>
+<p>In addition, it is a crucial pre-condition that the variable of interest correlates with the EO and/or auxiliary data features. Otherwise, the tool does not provide reliable predictions of the target variable (e.g., forest height) based on the EO and auxiliary data features. Similarly, the tool only provides reliable predictions for ecosystems which are included in the feature bank. For example, the feature bank provided here with the python code only applies for forest ecosystem, results are invalid in any other land cover types.</p>
+<p>Furthermore, it is important to note that the levels of reflectance in the EO images used for the tool should be similar to levels of the image used to create the feature banks. The user should beware of variation in the levels of reflectance, even in Analysis Ready Datasets (ARD), like the Sentinel-2 L2A surface reflectance product. Atmospheric and seasonal changes may cause variation in the levels of reflectance between images. This type of variation affects the predictions of the k-NN tool.</p>
+<p>Finally, application of a feature bank outside its geographic extent must be conducted with caution. Based on an empirical method, the k-NN tool is sensitive to the geographic variation in ecosystem characteristics. It is not recommended to apply a feature bank for target variable prediction outside its geographical extent.</p>
+<h1 id="3-references">3. REFERENCES</h1>
+<p>Alt H. 2001. The Nearest Neighbor. In: Alt H, editor. Computational Discrete Mathematics. Vol. 2122. Berlin, Heidelberg: Springer Berlin Heidelberg. (Goos G, Hartmanis J, Van Leeuwen J, editors. Lecture Notes in Computer Science). p. 13–24. [accessed 2023 Jun 28]. http://link.springer.com/10.1007/3-540-45506-X_2  </p>
+<p>Antropov, O., Rauste, Y., Häme, T., Praks, J. Polarimetric ALOS PALSAR time series in mapping biomass of boreal forests. Remote Sens. 2017, 9, 999. https://doi.org/10.3390/rs9100999  </p>
+<p>Häme, T., J. Kilpi, H. Ahola, Y. Rauste, O. Antropov, M. Rautiainen, L. Sirro, and S. Bounepone 2013. ”Improved mapping of tropical forests with optical and SAR imagery, Part I: Forest cover and accuracy assessment using multi-resolution data.” IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 6: 74 – 91. doi: 10.1109/JSTARS.2013.2241019  </p>
+<p>Kangas, A., R. Astrup, J. Breidenbach, J. Fridman, T. Gobakken, K.T. Korhonen, M. Maltamo. 2018. “Remote sensing and forest inventories in Nordic countries – roadmap for the future.” Scandinavian Journal of Forest Research 33: 397-412. doi: 10.1080/02827581.2017.1416666  </p>
+<p>Mäkisara, K., Katila, M. &amp; Peräsaari, J. 2022. The Multi-Source national forest inventory of Finland — methods and results 2017 and 2019. Natural resources and bioeconomy studies 90/2022. Natural Resources Institute Finland, Helsinki 73 p.</p>
+<p>Tokola T.J., S. Pitkänen, and E. Muinonen. 1996. “Point accuracy of a nonparametric method n estimation of forest characteristics with different satellite materials.” International Journal of Remote Sensing 17: 2333-2351. doi: 10.1080/01431169608948776</p>
+<p>Tomppo, E.; Antropov, O.; Praks, J. Boreal forest snow damage mapping using multitemporal Sentinel-1 data. Remote Sens. 2019, 11, 384. https://doi.org/10.3390/rs11040384</p>
+<p>Tomppo, E., Olsson, H., Ståhl, G., Nilsson, M., Hagner, O., Katila, M. Combining national forest inventory field plots and remote sensing data for forest databases. Remote Sens. Environ. 2008, 112, 1982–1999.</p>
+<p>Tomppo E. 1991. “Satellite image-based national forest inventory of Finland.” International Archives of Photogrammetry and Remote Sensing 28: 419-424.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
